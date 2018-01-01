@@ -127,7 +127,7 @@ alias gsl='git stash list'
 alias gsp='git stash pop'
 alias gss='git stash save --include-untracked'
 alias gsS='git stash save --patch --no-keep-index'
-alias gsw='git stash save --include-untracked --keep-index'
+alias gsk='git stash save --include-untracked --keep-index'
 
 # Working Copy (w)
 alias gws='git status --ignore-submodules=none --short'

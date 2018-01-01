@@ -6,7 +6,6 @@ setopt CORRECT
 #
 
 # Disable correction.
-alias ack='nocorrect ack'
 alias cd='nocorrect cd'
 alias cp='nocorrect cp'
 alias grep='nocorrect grep'
@@ -54,16 +53,6 @@ function mkdcd {
   [[ -n "$1" ]] && mkdir -p "$1" && builtin cd "$1"
 }
 
-# Changes to a directory and lists its contents.
-function cdls {
-  builtin cd "$argv[-1]" && ls "${(@)argv[1,-2]}"
-}
-
-# Finds files and executes a command on them.
-function find-exec {
-  find . -type f -iname "*${1:-}*" -exec "${2:-file}" '{}' \;
-}
-
 # Displays user owned processes status.
 function psu {
   ps -U "${1:-$USER}" -o 'pid,%cpu,%mem,command' "${(@)argv[2,-1]}"
@@ -72,10 +61,7 @@ function psu {
 alias dk='docker'
 alias dkc='docker-compose'
 function dksh() {
-  [[ -z "$DOCKER_MACHINE_NAME" ]] && echo "No active docker machine" && return 1
-  [[ -n "$COMPOSE_PROJECT_NAME" ]] && local prefix="${COMPOSE_PROJECT_NAME}_"
-  local name=`docker ps --format "{{.Names}}" --filter "name=$prefix$1"`
-  docker exec -it "$name" bash
+  docker-compose exec "$1" bash
 }
 alias dkm='docker-machine'
 alias dkmls='docker-machine ls --quiet'

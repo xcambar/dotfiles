@@ -20,7 +20,7 @@ fi
 # Auto Start
 #
 
-if [[ -z "$TMUX" && -z "$EMACS" && -z "$VIM" ]]; then
+if [[ -z "$TMUX" && -z "$EMACS" && -z "$VIM" && -z "$VSCODE_CLI" ]]; then
   tmux_session='_default_'
 
   # Create the default '#Prezto' session if not available.
@@ -39,7 +39,5 @@ if [[ -z "$TMUX" && -z "$EMACS" && -z "$VIM" ]]; then
   return 0;
 fi
 
-
-
-source /usr/local/bin/virtualenvwrapper.sh
-[ -s "$NVM_DIR/nvm.sh"   ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+export PATH="$HOME/.cargo/bin:$PATH"
+export JAVA_HOME="`/usr/libexec/java_home -v '1.8*'`"

@@ -111,5 +111,3 @@ for index ({1..9}) alias "$index"="cd +${index}"; unset index
 
 ## Custom
 unsetopt NOMATCH
-
-export TERM=screen-256color
