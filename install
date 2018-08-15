@@ -83,3 +83,6 @@ $(brew info fzf | grep /install)
 
 # Trouble with C-h in Neovim+Tmux+iTerm?
 # => https://github.com/neovim/neovim/issues/2048#issuecomment-78045837
+
+
+ln -s ~/.env/themes/themer-vim/ ~/.config/nvim/colors

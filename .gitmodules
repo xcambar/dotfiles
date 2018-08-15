@@ -1,19 +1,12 @@
+[submodule "tools/tpm"]
+	path = tools/tpm
+	url = https://github.com/tmux-plugins/tpm
 [submodule "vms/nvm"]
 	path = vms/nvm
 	url = git://github.com/creationix/nvm.git
-[submodule "tools/doctorjs"]
-	path = tools/doctorjs
-	url = https://github.com/mozilla/doctorjs.git
 [submodule "tools/prezto"]
 	path = tools/prezto
 	url = https://github.com/sorin-ionescu/prezto.git
-[submodule "bundle/vundle"]
-	path = bundle/vundle
-	url = git://github.com/gmarik/vundle.git
-
-[submodule "tools/rbenv/plugins/rbenv-binstubs"]
-	path = tools/rbenv/plugins/rbenv-binstubs
-	url = git@github.com:ianheggie/rbenv-binstubs.git
 [submodule "config/base16-shell"]
 	path = config/base16-shell
 	url = git@github.com:chriskempson/base16-shell.git

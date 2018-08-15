@@ -13,6 +13,7 @@ endif
 
 call plug#begin('~/.config/nvim/plugins')
 
+" Plug '~/code/projects/vim-slideshow'
 Plug 'chriskempson/base16-vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -59,15 +60,10 @@ else
 endif
 call plug#end()
 
-set t_Co=256
-if filereadable(expand("~/.vimrc_background"))
-  let base16colorspace=256
-  source ~/.vimrc_background
-endif
-
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_linters = {
 \   'javascript': ['eslint'],
+\   'elixir': ['credo']
 \}
 
 set hidden
@@ -123,11 +119,11 @@ set clipboard=unnamed
 
 let g:mapleader = ";"
 let mapleader = ";"
-" Distraction-free map
-nnoremap <Leader>z :Goyo<cr>
 
 set laststatus=1
 
+let base16colorspace=256
+colorscheme base16-oceanicnext
 highlight LineNr ctermbg=None ctermfg=8
 highlight CursorLineNr ctermbg=20 ctermfg=18
 highlight clear SignColumn
@@ -188,3 +184,7 @@ let g:rainbow_active = 1
 "
 let g:move_key_modifier = 'S'
 
+"
+" Config for vim-polyglot
+"
+set conceallevel=2

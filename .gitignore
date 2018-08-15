@@ -2,3 +2,5 @@ bundle
 *.swp
 .DS_Store
 vim/autoload/plug.vim.old
+/node_modules
+/themes
