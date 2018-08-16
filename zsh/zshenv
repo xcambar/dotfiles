@@ -55,3 +55,8 @@ unset SSL_CERT_FILE
 # Vagrant configuration to save some space on the hard drive
 export VAGRANT_HOME=/Volumes/External/Work/vagrant/
 export MACHINE_STORAGE_PATH=/Volumes/External/Work/docker-machine/
+
+source $HOME/.cargo/env
+if [ -x /usr/libexec/java_home ]; then
+  export JAVA_HOME="`/usr/libexec/java_home -v '1.8*'`"
+fi

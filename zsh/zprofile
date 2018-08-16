@@ -38,6 +38,3 @@ if [[ -z "$TMUX" && -z "$EMACS" && -z "$VIM" && -z "$VSCODE_CLI" ]]; then
   exec tmux attach-session
   return 0;
 fi
-
-export PATH="$HOME/.cargo/bin:$PATH"
-export JAVA_HOME="`/usr/libexec/java_home -v '1.8*'`"
