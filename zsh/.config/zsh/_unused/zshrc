@@ -1,0 +1,61 @@
+#
+# Executes commands at the start of an interactive session.
+#
+
+
+. "${ZDOTDIR:-$HOME}/.zsh/zgen/zgen.zsh"
+
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
+
+if ! zgen saved; then
+  zgen load chrissicool/zsh-256color
+  zgen load zsh-users/zsh-syntax-highlighting
+  zgen load zsh-users/zsh-completions src
+  zgen load zsh-users/zsh-history-substring-search
+  zgen save
+fi
+
+. "$HOME/.zsh/_completion.zsh"
+. "$HOME/.zsh/_vim.zsh"
+. "$HOME/.zsh/_tmux.zsh"
+. "$HOME/.zsh/_env.zsh"
+. "$HOME/.zsh/_utils.zsh"
+. "$HOME/.zsh/_git.zsh"
+. "$HOME/.zsh/_node.zsh"
+. "$HOME/.zsh/_base16.zsh"
+. "$HOME/.zsh/_theme.zsh"
+. "$HOME/.zsh/_fzf.zsh"
+
+# Ensure path arrays do not contain duplicates.
+typeset -gU cdpath fpath mailpath path
+# Reclaim Ctrl-S and Ctrl-Q (Ctrl-Q is used in Vim)
+stty start undef
+stty stop undef
+#
+# Defines the helper to go directly to a subdirectory of $codePath
+#
+local codePath="$HOME/code/"
+function c () {
+  cd $codePath$1
+}
+compdef '_files -W "$codePath/" -/' c
+
+alias less=$PAGER
+alias zless=$PAGER
+alias cat=$PAGER
+alias bcat=/bin/cat #Use \cat works too
+alias vim=nvim
+alias ip='ipconfig getifaddr en0'
+
+# Ag + fzf + vim
+agv() {
+  [ $# -eq 0 ] && return
+  local out cols
+  if out=$(ag --nogroup "$@" | fzf); then
+    cols=("${(@s/:/)out}")
+    vim ${cols[1]} +"normal! ${cols[2]}zz"
+  fi
+}
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+eval "$(direnv hook zsh)"
