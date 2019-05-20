@@ -16,6 +16,7 @@ compinit
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
+export KEEPASS_DATABASE="${HOME}/Nextcloud/_kee.kdbx"
 PATH="${PATH}:${HOME}/.local/bin"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
