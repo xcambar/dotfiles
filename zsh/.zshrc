@@ -25,3 +25,5 @@ PATH="${PATH}:${HOME}/.local/bin"
 . $HOME/.config/zsh/_git.zsh
 . $HOME/.config/zsh/_fzf.zsh
 . $HOME/.config/zsh/_theme.zsh
+
+alias vim=nvim

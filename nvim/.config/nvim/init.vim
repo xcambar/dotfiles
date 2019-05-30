@@ -29,7 +29,8 @@ if !exists('vimpager')
   Plug 'jiangmiao/auto-pairs'
   Plug 'tpope/vim-surround'
   Plug 'tomtom/tcomment_vim' "commentary
-  Plug 'rking/ag.vim'
+  " Plug 'rking/ag.vim'
+  Plug 'mhinz/vim-grepper'
   Plug 'mattn/emmet-vim'
   " TODO Replace with xcambar/vim-match-control
   Plug 'dirkwallenstein/vim-match-control'
