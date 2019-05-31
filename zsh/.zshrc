@@ -21,6 +21,7 @@ PATH="${PATH}:${HOME}/.local/bin"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/.config/base16-shell/base16-shell.plugin.zsh ] && . ~/.config/base16-shell/base16-shell.plugin.zsh
+[ -f ~/.config/ripgrep/ripgreprc ] && export RIPGREP_CONFIG_PATH="${HOME}/.config/ripgrep/ripgreprc"
 
 . $HOME/.config/zsh/_git.zsh
 . $HOME/.config/zsh/_fzf.zsh
