@@ -6,9 +6,33 @@ set -o pipefail
 _DB=${KEEPASS_DATABASE:-${HOME}/keepass.kdbx}
 
 read -sp "Enter your password:" password
-tmp=`mktemp`
-echo $password | keepassxc-cli ls -R -q ${_DB} > $tmp
-entry=`cat $tmp | fzf | xargs -0`
-echo $password | keepassxc-cli show -a Password -q ${_DB} "${entry}" | xclip -rmlastnl
 
-rm $tmp
+input=`echo $password | keepassxc-cli ls -R -q ${_DB}`
+
+entry=`echo $password |
+  keepassxc-cli ls -R -q ${_DB} |
+  awk '
+    BEGIN {
+      group=""
+    }
+    /^[^[:space:]]/ {
+      group = ""
+    }
+    /\/$/ {
+      group = group $0
+      $0 = ""
+    }
+    /^[[:space:]]/ {
+      path = $0
+      sub(/^[[:space:]]+/, "", path)
+      $0 = group path
+    }
+    /.+/ {
+      print $0
+    }
+  ' |
+  sort |
+  fzf |
+  xargs -0`
+
+echo $password | keepassxc-cli show -a Password -q ${_DB} "${entry}" | xclip -rmlastnl
