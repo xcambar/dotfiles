@@ -1,5 +1,5 @@
 function zle-line-init zle-keymap-select {
-  PROMPT=`purs prompt -k "$KEYMAP" -r "$?"`
+  PROMPT=`purs prompt -k "$KEYMAP" -r "$?" --venv "${${VIRTUAL_ENV:t}%-*}"`
   zle reset-prompt
 }
 zle -N zle-line-init
