@@ -1,7 +1,7 @@
 source $HOME/.config/nvim/config/plugins/neomake.vim
 source $HOME/.config/nvim/config/plugins/ag.vim
 
-source $HOME/.config/nvim/config/themes/_tmuxline.vim
+" source $HOME/.config/nvim/config/themes/_tmuxline.vim
 
 set scrolloff=8
 set directory^=$HOME/.config/nvim/tmp//

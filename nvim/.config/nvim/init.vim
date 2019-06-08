@@ -7,6 +7,7 @@ let g:jsx_ext_required = 1
 
 call plug#begin('~/.config/nvim/plugins')
 
+Plug 'knubie/vim-kitty-navigator'
 Plug 'chriskempson/base16-vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -15,7 +16,7 @@ if !has('nvim')
 endif
 Plug 'thinca/vim-localrc'
 Plug 'sheerun/vim-polyglot'
-Plug 'christoomey/vim-tmux-navigator'
+" Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/vim-emoji', { 'for': 'markdown' }
 " Plug 'luochen1990/rainbow'
 Plug 'junegunn/rainbow_parentheses.vim'
