@@ -4,3 +4,6 @@
 [submodule "src/vim-kitty-navigator"]
 	path = src/vim-kitty-navigator
 	url = git://github.com/knubie/vim-kitty-navigator
+[submodule "src/base16-kitty"]
+	path = src/base16-kitty
+	url = https://github.com/kdrag0n/base16-kitty.git
