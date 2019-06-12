@@ -1,3 +1,5 @@
+[ -f ~/.config/base16-shell/base16-shell.plugin.zsh ] && . ~/.config/base16-shell/base16-shell.plugin.zsh
+
 function zle-line-init zle-keymap-select {
   PROMPT=`purs prompt -k "$KEYMAP" -r "$?" --venv "${${VIRTUAL_ENV:t}%-*}"`
   zle reset-prompt

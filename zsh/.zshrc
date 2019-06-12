@@ -11,7 +11,7 @@ zstyle :compinstall filename '/home/xav/.zshrc'
 
 autoload -Uz compinit
 compinit
-# End of lines added by compinstallexport 
+# End of lines added by compinstallexport
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -20,9 +20,6 @@ export EDITOR=nvim
 export KEEPASS_DATABASE="${HOME}/Nextcloud/_kee.kdbx"
 PATH="${PATH}:${HOME}/.local/bin"
 
-export FZF_DEFAULT_OPTS='--layout=reverse-list --border --height=40%'
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-[ -f ~/.config/base16-shell/base16-shell.plugin.zsh ] && . ~/.config/base16-shell/base16-shell.plugin.zsh
 [ -f ~/.config/ripgrep/ripgreprc ] && export RIPGREP_CONFIG_PATH="${HOME}/.config/ripgrep/ripgreprc"
 
 . $HOME/.config/zsh/_git.zsh

@@ -1,3 +1,6 @@
+export FZF_DEFAULT_OPTS='--layout=reverse-list --border --height=40%'
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # Use git by default
 export FZF_DEFAULT_COMMAND='rg --files-with-matches "" 2> /dev/null'
 # export FZF_DEFAULT_COMMAND='(git ls-tree -tr --name-only HEAD || ag -g "") 2> /dev/null'
