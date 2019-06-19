@@ -9,12 +9,6 @@ call plug#begin('~/.config/nvim/plugins')
 
 Plug 'knubie/vim-kitty-navigator'
 Plug 'chriskempson/base16-vim'
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-if !has('nvim')
-  Plug 'wincent/terminus' "dosn't work with Neovim (yet)
-endif
-Plug 'thinca/vim-localrc'
 Plug 'sheerun/vim-polyglot'
 " Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/vim-emoji', { 'for': 'markdown' }
@@ -25,6 +19,9 @@ Plug 'airblade/vim-gitgutter'
 " Editor Only
 if !exists('vimpager')
   set rtp+=/usr/local/opt/fzf "FZF
+  Plug 'thinca/vim-localrc'
+  Plug 'scrooloose/nerdtree'
+  Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'mbbill/undotree'
   Plug 'tpope/vim-fugitive'
   Plug 'jiangmiao/auto-pairs'
