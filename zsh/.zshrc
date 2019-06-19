@@ -8,7 +8,7 @@ HISTDUP=erase                       #Erase duplicates in the history file
 setopt appendhistory                #Append history to the history file (no overwriting)
 setopt sharehistory                 #Share history across terminals
 setopt incappendhistory             #Immediately append to the history file, not just when a term is killed
-
+setopt histignoredups               #Do not save the current line if it is the same as the previous one
 
 
 unsetopt beep
