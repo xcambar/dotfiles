@@ -1,0 +1,16 @@
+partial alphanumeric_keys
+xkb_symbols "xc" { 
+
+    include "us(euro)" 
+
+    name[Group1]="English (US, with dead keys for Xavier)";
+
+    key <AD03>  { [   e,  E,      dead_acute,     NoSymbol ] };
+    key <AD07>  { [   u,  U,      dead_diaeresis,     NoSymbol ] };
+    key <AD08>  { [   i,  I,      dead_grave,     NoSymbol ] };
+    key <AD09>  { [   o,  O,      dead_circumflex,     NoSymbol ] };
+    key <AB03>  { [   c,  C,      ccedilla,     Ccedilla ] };
+
+    include "level3(ralt_switch)"
+};
+
