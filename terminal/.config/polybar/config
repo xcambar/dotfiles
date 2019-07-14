@@ -65,7 +65,7 @@ height = 27
 radius = 0
 fixed-center = false
 
-background = ${color.base01}
+background = ${color.bg-alt}
 foreground = ${colors.foreground}
 
 line-size = 3
@@ -87,7 +87,7 @@ font-2 = siji:pixelsize=10;1
 
 modules-left = i3
 modules-center =
-modules-right = pulseaudio wlan battery wireguard date
+modules-right = pulseaudio wlan wireguard battery date
 
 tray-position = right
 tray-padding = 2
@@ -198,7 +198,7 @@ ramp-capacity-1-foreground = ${color.primary}
 [module/wireguard]
 type=custom/script
 exec=~/.config/polybar/wireguard.sh
-format-foreground= ${color.success}
+format-foreground= ${color.base00}
 
 [settings]
 screenchange-reload = true
